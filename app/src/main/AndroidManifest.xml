@@ -22,6 +22,7 @@
 
         <activity android:name=".motionevent.MotionEventActivity"></activity>
         <activity android:name=".window.WindowActivity"></activity>
+        <activity android:name=".clipchildren.ClipChildrenActivity"></activity>
     </application>
 
 </manifest>
