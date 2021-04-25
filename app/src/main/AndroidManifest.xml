@@ -3,6 +3,7 @@
     package="com.example.androiddemo">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -10,6 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
         android:name=".Application.App"
         android:theme="@style/Theme.AndroidDemo">
         <activity android:name=".MainActivity">
@@ -23,6 +25,7 @@
         <activity android:name=".motionevent.MotionEventActivity"></activity>
         <activity android:name=".window.WindowActivity"></activity>
         <activity android:name=".clipchildren.ClipChildrenActivity"></activity>
+        <activity android:name=".storagepermission.StorageActivity"></activity>
     </application>
 
 </manifest>

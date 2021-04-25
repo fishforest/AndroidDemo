@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.example.androiddemo.clipchildren.ClipChildrenActivity;
 import com.example.androiddemo.motionevent.MotionEventActivity;
+import com.example.androiddemo.storagepermission.StorageActivity;
 import com.example.androiddemo.window.WindowActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,16 +19,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        findViewById(R.id.btn_motion).setOnClickListener((v)->{
+        findViewById(R.id.btn_motion).setOnClickListener((v) -> {
             MotionEventActivity.start(MainActivity.this);
         });
 
-        findViewById(R.id.btn_window).setOnClickListener((v)->{
+        findViewById(R.id.btn_window).setOnClickListener((v) -> {
             WindowActivity.start(MainActivity.this);
         });
 
-        findViewById(R.id.btn_clipchildren).setOnClickListener((v)->{
+        findViewById(R.id.btn_clipchildren).setOnClickListener((v) -> {
             ClipChildrenActivity.start(MainActivity.this);
+        });
+
+        findViewById(R.id.btn_storage_permission).setOnClickListener((v) -> {
+            StorageActivity.start(v.getContext());
         });
     }
 }

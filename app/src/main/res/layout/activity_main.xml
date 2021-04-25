@@ -36,4 +36,15 @@
         app:layout_constraintLeft_toLeftOf="@id/btn_window"
         app:layout_constraintTop_toTopOf="parent"></Button>
 
+    <Button
+        android:id="@+id/btn_storage_permission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="316dp"
+        android:text="start storage test"
+        app:layout_constraintLeft_toLeftOf="@id/btn_window"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
