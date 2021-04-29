@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
+        android:hardwareAccelerated="false"
         android:name=".Application.App"
         android:theme="@style/Theme.AndroidDemo">
         <activity android:name=".MainActivity">
@@ -26,6 +27,7 @@
         <activity android:name=".window.WindowActivity"></activity>
         <activity android:name=".clipchildren.ClipChildrenActivity"></activity>
         <activity android:name=".storagepermission.StorageActivity"></activity>
+        <activity android:name=".clippadding.ClipPaddingActivity"></activity>
     </application>
 
 </manifest>

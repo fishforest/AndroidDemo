@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.androiddemo.clipchildren.ClipChildrenActivity;
+import com.example.androiddemo.clippadding.ClipPaddingActivity;
 import com.example.androiddemo.motionevent.MotionEventActivity;
 import com.example.androiddemo.storagepermission.StorageActivity;
 import com.example.androiddemo.window.WindowActivity;
@@ -33,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_storage_permission).setOnClickListener((v) -> {
             StorageActivity.start(v.getContext());
+        });
+
+        findViewById(R.id.btn_clippadding).setOnClickListener((v) -> {
+            ClipPaddingActivity.start(v.getContext());
         });
     }
 }
