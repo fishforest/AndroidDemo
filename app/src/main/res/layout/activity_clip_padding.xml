@@ -8,11 +8,15 @@
 
     <com.example.androiddemo.clippadding.ClipPaddingViewGroup
         android:background="@color/green"
-        android:clipToPadding="true"
+        android:visibility="visible"
+        android:clipToPadding="false"
+        android:layout_marginTop="20dp"
         android:paddingTop="20dp"
+        android:scrollX="-20dp"
         android:layout_width="300dp"
         android:layout_height="300dp">
         <com.example.androiddemo.clippadding.ClipPaddingView
+            android:clickable="true"
             android:background="@color/red"
             android:layout_width="200dp"
             android:layout_height="200dp">
@@ -21,6 +25,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
+        android:visibility="visible"
         android:layout_marginTop="30dp"
         android:clipToPadding="false"
         android:paddingTop="20dp"

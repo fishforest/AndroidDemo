@@ -28,6 +28,8 @@
         <activity android:name=".clipchildren.ClipChildrenActivity"></activity>
         <activity android:name=".storagepermission.StorageActivity"></activity>
         <activity android:name=".clippadding.ClipPaddingActivity"></activity>
+        <activity android:name=".edittext.EditTextActivity"></activity>
+
     </application>
 
 </manifest>

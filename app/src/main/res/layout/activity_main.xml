@@ -58,4 +58,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></Button>
 
+    <Button
+        android:id="@+id/btn_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="484dp"
+        android:text="start editText test"
+        app:layout_constraintLeft_toLeftOf="@id/btn_window"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
