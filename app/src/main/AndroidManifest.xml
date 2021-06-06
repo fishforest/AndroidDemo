@@ -29,6 +29,7 @@
         <activity android:name=".storagepermission.StorageActivity"></activity>
         <activity android:name=".clippadding.ClipPaddingActivity"></activity>
         <activity android:name=".edittext.EditTextActivity"></activity>
+        <activity android:name=".ipc.IPCActivity"></activity>
 
     </application>
 

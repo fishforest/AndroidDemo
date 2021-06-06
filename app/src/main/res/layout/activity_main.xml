@@ -7,6 +7,17 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btn_test_ipc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="556dp"
+        android:text="start test ipc"
+        app:layout_constraintLeft_toLeftOf="@id/btn_window"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+    <Button
         android:id="@+id/btn_clippadding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

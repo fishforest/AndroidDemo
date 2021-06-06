@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.example.androiddemo.clipchildren.ClipChildrenActivity;
 import com.example.androiddemo.clippadding.ClipPaddingActivity;
 import com.example.androiddemo.edittext.EditTextActivity;
+import com.example.androiddemo.ipc.IPCActivity;
 import com.example.androiddemo.motionevent.MotionEventActivity;
 import com.example.androiddemo.storagepermission.StorageActivity;
 import com.example.androiddemo.window.WindowActivity;
@@ -43,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_edit_text).setOnClickListener((v) -> {
             EditTextActivity.start(v.getContext());
+        });
+
+        findViewById(R.id.btn_test_ipc).setOnClickListener((v) -> {
+            IPCActivity.start(v.getContext());
         });
     }
 }
