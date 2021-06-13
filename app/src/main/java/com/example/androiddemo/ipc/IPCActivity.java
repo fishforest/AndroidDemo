@@ -32,18 +32,7 @@ public class IPCActivity extends AppCompatActivity {
     IStudentInfo iStudentInfo;
 
     //声明回调
-    RemoteCallback remoteCallback = new RemoteCallback.Stub() {
-        @Override
-        public void onCallback(Student student) throws RemoteException {
-            Log.d("fish", "call back student:" + student);
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Toast.makeText(IPCActivity.this, "client receive change:" + student.toString(), Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-    };
+    RemoteCallback remoteCallback = new MyRemoteCallback(this, new com.example.androiddemo.ipc.ExtraData());
 
     ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
