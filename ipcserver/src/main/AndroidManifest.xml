@@ -19,6 +19,11 @@
 
         <service android:name="StudentService" android:exported="true">
         </service>
+
+<!--        <provider-->
+<!--            android:exported="true"-->
+<!--            android:authorities="com.fish.AMSTargetProvider"-->
+<!--            android:name=".AMSTargetProvider"/>-->
     </application>
 
 </manifest>

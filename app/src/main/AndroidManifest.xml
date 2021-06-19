@@ -30,7 +30,20 @@
         <activity android:name=".clippadding.ClipPaddingActivity"></activity>
         <activity android:name=".edittext.EditTextActivity"></activity>
         <activity android:name=".ipc.IPCActivity"></activity>
+        <activity android:name=".ams.AMSActivity"></activity>
+        <activity android:name=".ams.AMSTargetActivity"/>
 
+        <service android:name=".ams.AMSTargetService" android:process=".jj"/>
+<!--        <receiver android:name=".ams.AMSTargetBroadcast">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="my_action"></action>-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+<!--        -->
+        <provider
+            android:authorities="com.fish.AMSTargetProvider"
+            android:name=".ams.AMSTargetProvider">
+        </provider>
     </application>
 
 </manifest>

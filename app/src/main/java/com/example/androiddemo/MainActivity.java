@@ -2,8 +2,14 @@ package com.example.androiddemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityManager;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.UserHandle;
 
+import com.example.androiddemo.ams.AMSActivity;
 import com.example.androiddemo.clipchildren.ClipChildrenActivity;
 import com.example.androiddemo.clippadding.ClipPaddingActivity;
 import com.example.androiddemo.edittext.EditTextActivity;
@@ -48,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_test_ipc).setOnClickListener((v) -> {
             IPCActivity.start(v.getContext());
+        });
+
+        findViewById(R.id.btn_test_ams).setOnClickListener((v) -> {
+            AMSActivity.start(v.getContext());
         });
     }
 }
