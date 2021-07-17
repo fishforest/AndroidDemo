@@ -44,6 +44,20 @@
             android:authorities="com.fish.AMSTargetProvider"
             android:name=".ams.AMSTargetProvider">
         </provider>
+
+        <activity android:name=".fileprovider.FileProviderActivity"></activity>
+
+        <provider
+            android:authorities="com.fish.fileprovider"
+            android:name=".fileprovider.MyFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path">
+            </meta-data>
+        </provider>
+
     </application>
 
 </manifest>

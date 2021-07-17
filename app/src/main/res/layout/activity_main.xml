@@ -7,6 +7,18 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btn_test_fileProvider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="168dp"
+        android:text="FileProvider"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="@id/btn_window"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+    <Button
         android:id="@+id/btn_test_ipc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

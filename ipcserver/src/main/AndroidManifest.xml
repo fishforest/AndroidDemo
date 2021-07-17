@@ -24,6 +24,19 @@
 <!--            android:exported="true"-->
 <!--            android:authorities="com.fish.AMSTargetProvider"-->
 <!--            android:name=".AMSTargetProvider"/>-->
+
+
+        <activity android:name="com.fish.fileprovider.ReceiveActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:scheme="http"/>
+                <data android:mimeType="text/*"></data>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

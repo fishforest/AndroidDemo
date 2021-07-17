@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <root-path name="myroot" path="." />
+    <external-path name="external_file" path="fish" />
+    <external-files-path name="external_app_file" path="myfile" />
+    <external-cache-path name="external_app_cache" path="mycache/doc/" />
+    <files-path name="inner_app_file" path="." />
+    <cache-path name="inner_app_cache" path="." />
+</paths>
