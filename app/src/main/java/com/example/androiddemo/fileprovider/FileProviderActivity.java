@@ -2,12 +2,17 @@ package com.example.androiddemo.fileprovider;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Parcelable;
+import android.util.Log;
 import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
@@ -54,6 +59,10 @@ public class FileProviderActivity extends AppCompatActivity {
             share2Other();
         });
 
+        findViewById(R.id.btn_choose).setOnClickListener((v) -> {
+            chooseApp2();
+        });
+
         external_filePath = Environment.getExternalStorageDirectory() + File.separator + "fish/" + txtName;
         external_app_filePath = getExternalFilesDir("") + File.separator + "myfile/" + txtName;
         inner_app_filePath = getFilesDir() + File.separator + txtName;
@@ -64,6 +73,60 @@ public class FileProviderActivity extends AppCompatActivity {
                 testPermission(FileProviderActivity.this);
             }
         }).start();
+    }
+
+    private void chooseApp(Intent intent) {
+        List<ResolveInfo> resInfo = getPackageManager().queryIntentActivities(intent, 0);
+        if (resInfo != null && resInfo.size() > 0) {
+            List<Intent> intentList = new ArrayList<>();
+            for (ResolveInfo resolveInfo : resInfo) {
+                String packageName = resolveInfo.activityInfo.packageName;
+                Log.d("name:", packageName);
+                if (packageName.contains("com.android") || packageName.contains("huawei"))
+                    continue;
+                Intent targetIntent = new Intent();
+                targetIntent.setComponent(new ComponentName(packageName, resolveInfo.activityInfo.name));
+                targetIntent.setAction(Intent.ACTION_SEND);
+                targetIntent.setType("text/*");
+                targetIntent.setComponent(new ComponentName(packageName, resolveInfo.activityInfo.name));
+                intentList.add(targetIntent);
+            }
+
+            List<Intent> intentList2 = new ArrayList<>();
+            for (int i = intentList.size() - 1; i>=0;i--) {
+                intentList2.add(intentList.get(i));
+            }
+            Intent chooserIntent = Intent.createChooser(intentList2.remove(1), "选择分享APP");
+            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentList2.toArray(new Parcelable[]{}));
+
+            startActivity(chooserIntent);
+        }
+    }
+
+    private boolean checkDefaultSelect(Intent intent) {
+        PackageManager packageManager = getPackageManager();
+        ResolveInfo info = packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY);
+        Log.d("default", info.activityInfo.packageName);
+        packageManager.clearPackagePreferredActivities(getPackageName());
+        return false;
+    }
+
+    private void chooseApp2() {
+        Intent intent = new Intent();
+
+        intent.setAction(Intent.ACTION_SEND);
+
+        intent.setType("text/plain");
+
+        Intent intent2 = new Intent();
+
+        intent2.setAction(Intent.ACTION_CHOOSER);
+
+        intent2.putExtra(Intent.EXTRA_TITLE, "please selete a app");
+
+        intent2.putExtra(Intent.EXTRA_INTENT, intent);
+
+        startActivity(intent2);
     }
 
     private void writeFile(String filePath) {
@@ -108,8 +171,10 @@ public class FileProviderActivity extends AppCompatActivity {
             startActivity(intent);
         } catch (Exception e) {
             //若是没有其它应用能够接收打开此种mimeType，则抛出异常
-            Toast.makeText(this, e.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
         }
+
+//        checkDefaultSelect(intent);
     }
 
     private void openByOtherForN() {
@@ -127,8 +192,8 @@ public class FileProviderActivity extends AppCompatActivity {
     private void share2Other() {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
-        intent.setType("video/*");
-        startActivity(intent);
+        intent.setType("text/*");
+        chooseApp(intent);
     }
 
     //检查权限，并返回需要申请的权限列表
