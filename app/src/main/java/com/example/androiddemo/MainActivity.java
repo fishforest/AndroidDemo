@@ -14,6 +14,8 @@ import com.example.androiddemo.clipchildren.ClipChildrenActivity;
 import com.example.androiddemo.clippadding.ClipPaddingActivity;
 import com.example.androiddemo.edittext.EditTextActivity;
 import com.example.androiddemo.fileprovider.FileProviderActivity;
+import com.example.androiddemo.fragment.FragmentActivity;
+import com.example.androiddemo.fragment.StaticFragmentActivity;
 import com.example.androiddemo.ipc.IPCActivity;
 import com.example.androiddemo.motionevent.MotionEventActivity;
 import com.example.androiddemo.storagepermission.StorageActivity;
@@ -63,6 +65,13 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_test_fileProvider).setOnClickListener((v) -> {
             FileProviderActivity.start(v.getContext());
+        });
+
+        findViewById(R.id.btn_test_fragment_static).setOnClickListener((v) -> {
+            StaticFragmentActivity.start(v.getContext());
+        });
+        findViewById(R.id.btn_test_fragment_dynamic).setOnClickListener((v) -> {
+            FragmentActivity.start(v.getContext());
         });
     }
 }

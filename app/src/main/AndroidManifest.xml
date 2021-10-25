@@ -58,6 +58,8 @@
             </meta-data>
         </provider>
 
+        <activity android:name=".fragment.FragmentActivity"></activity>
+        <activity android:name=".fragment.StaticFragmentActivity"></activity>
     </application>
 
 </manifest>

@@ -7,6 +7,30 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btn_test_fragment_static"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="316dp"
+        android:text="Fragment(静态)"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="@id/btn_window"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+    <Button
+        android:id="@+id/btn_test_fragment_dynamic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="248dp"
+        android:text="Fragment(动态)"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="@id/btn_window"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+    <Button
         android:id="@+id/btn_test_fileProvider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
