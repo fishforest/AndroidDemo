@@ -18,6 +18,7 @@ import com.example.androiddemo.fragment.FragmentActivity;
 import com.example.androiddemo.fragment.StaticFragmentActivity;
 import com.example.androiddemo.ipc.IPCActivity;
 import com.example.androiddemo.motionevent.MotionEventActivity;
+import com.example.androiddemo.ssl.SSLTestActivity;
 import com.example.androiddemo.storagepermission.StorageActivity;
 import com.example.androiddemo.window.WindowActivity;
 
@@ -72,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
         });
         findViewById(R.id.btn_test_fragment_dynamic).setOnClickListener((v) -> {
             FragmentActivity.start(v.getContext());
+        });
+        findViewById(R.id.btn_test_ssl).setOnClickListener((v) -> {
+            SSLTestActivity.start(v.getContext());
         });
     }
 }
