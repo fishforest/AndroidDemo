@@ -2,3 +2,4 @@ include ':app'
 rootProject.name = "AndroidDemo"
 include ':ipcserver'
 include ':sslserver'
+include ':sslclient'

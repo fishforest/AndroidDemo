@@ -97,7 +97,7 @@ public class MySSLServer
 
 class SSLDouble1 {
     static int port = 12345;
-    static String ip = "172.0.0.1";
+    static String ip = "192.168.10.4";
     public static SSLServerSocket getServerSocket() {
         try {
             String storePassword = "qinfuqian";
