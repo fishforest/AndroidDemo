@@ -97,13 +97,13 @@ public class MySSLServer
 
 class SSLDouble1 {
     static int port = 12345;
-    static String ip = "192.168.10.4";
+    static String ip = "192.168.2.40";
     public static SSLServerSocket getServerSocket() {
         try {
             String storePassword = "qinfuqian";
             String trustPassword = "qinfuqian";
             String kStore = "com/fish/sslserver/server.jks";
-            String ckStore = "com/fish/sslserver/serverTrust.jks";
+            String ckStore = "com/fish/sslserver/servertrust.jks";
             SSLContext sslContext = SSLContext.getInstance("TLSV1");
 
             KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");

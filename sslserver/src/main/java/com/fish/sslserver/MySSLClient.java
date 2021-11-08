@@ -39,13 +39,13 @@ public class MySSLClient {
 
     static class SSLDouble1 {
         static int port = 12345;
-        static String ip = "127.0.0.1";
+        static String ip = "192.168.2.25";
         public static SSLServerSocket getServerSocket() {
             try {
                 String storePassword = "qinfuqian";
                 String trustPassword = "qinfuqian";
                 String kStore = "com/fish/sslserver/client.jks";
-                String ckStore = "com/fish/sslserver/clientTrust.jks";
+                String ckStore = "com/fish/sslserver/clienttrust.jks";
                 SSLContext sslContext = SSLContext.getInstance("TLSV1");
 
 //                KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
@@ -76,7 +76,7 @@ public class MySSLClient {
                 String storePassword = "qinfuqian";
                 String trustPassword = "qinfuqian";
                 String kStore = "com/fish/sslserver/client.jks";
-                String ckStore = "com/fish/sslserver/clientTrust.jks";
+                String ckStore = "com/fish/sslserver/clienttrust.jks";
                 SSLContext sslContext = SSLContext.getInstance("TLSV1");
 
                 KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");

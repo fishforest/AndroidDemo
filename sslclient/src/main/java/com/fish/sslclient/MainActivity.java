@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     static class SSLDouble2 {
         static int port = 12345;
-        static String ip = "192.168.10.11";
+        static String ip = "192.168.2.25";
 
         public static SSLSocket getSSLSocket(Context context) {
             try {
@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 KeyStore ks = KeyStore.getInstance("BKS");
                 KeyStore tks = KeyStore.getInstance("BKS");
 
-                InputStream inputStreamServer = context.getResources().openRawResource(R.raw.trustsever);
                 InputStream inputStreamClient = context.getResources().openRawResource(R.raw.client);
+                InputStream inputStreamServer = context.getResources().openRawResource(R.raw.clienttrust);
                 ks.load(inputStreamClient, storePassword.toCharArray());
                 tks.load(inputStreamServer, trustPassword.toCharArray());
 
