@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     static class SSLDouble2 {
         static int port = 12345;
-        static String ip = "192.168.2.25";
+        static String ip = "192.168.2.40";
 
         public static SSLSocket getSSLSocket(Context context) {
             try {

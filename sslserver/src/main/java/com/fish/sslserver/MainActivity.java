@@ -1,12 +1,17 @@
 package com.fish.sslserver;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.security.KeyStore;
@@ -41,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("连接来了...");
 
                         //将得到的socket交给CreateThread对象处理,主线程继续监听
-                        new CreateThread2(socket);
+                        new CreateThread2(socket, MainActivity.this);
 
                     }
                 } catch (Exception e) {
@@ -122,17 +127,19 @@ class CreateThread2 extends Thread {
     static BufferedReader in;
     static PrintWriter out;
     static Socket s;
+    Activity activity;
 
     /*
      *构造函数,获得socket连接,初始化in和out对象
      */
 
-    public CreateThread2(Socket socket) {
+    public CreateThread2(Socket socket, Activity activity) {
         try {
             s = socket;
             in = new BufferedReader(new InputStreamReader(s.getInputStream(), "gb2312"));
 
             out = new PrintWriter(s.getOutputStream(), true);
+            this.activity = activity;
 
             start();  //开新线程执行run方法
 
@@ -148,6 +155,7 @@ class CreateThread2 extends Thread {
 
     public void run() {
         try {
+            writeMsg(s);
             while (true) {
                 String msg = in.readLine();
                 if (msg == null) {
@@ -155,9 +163,29 @@ class CreateThread2 extends Thread {
                     break;
                 }
                 System.out.println(msg);
+                toastMsg(msg);
             }
         } catch (Exception e) {
             System.out.println(e);
+            toastMsg(e.getLocalizedMessage());
+        }
+    }
+
+    private void toastMsg(String msg) {
+        activity.runOnUiThread(()->{
+            Toast.makeText(activity, msg, Toast.LENGTH_LONG).show();
+        });
+    }
+
+    private void writeMsg(Socket socket) {
+        String msg = "I'm fine";
+        try {
+            OutputStream outputStream = socket.getOutputStream();
+            outputStream.write(msg.getBytes());
+            Log.d("qfq", "write msg:" + msg);
+        } catch (IOException e) {
+            Log.e("qfq", e.getLocalizedMessage());
+            e.printStackTrace();
         }
     }
 

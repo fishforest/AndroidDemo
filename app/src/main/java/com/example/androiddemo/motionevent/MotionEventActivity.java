@@ -1,5 +1,6 @@
 package com.example.androiddemo.motionevent;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +18,11 @@ public class MotionEventActivity extends AppCompatActivity {
     public static void start(Context context) {
         Intent intent = new Intent(context, MotionEventActivity.class);
         context.startActivity(intent);
+    }
+
+    public static void startForResult(Context context) {
+        Intent intent = new Intent(context, MotionEventActivity.class);
+        ((Activity)context).startActivityForResult(intent, 100);
     }
 
     @Override
@@ -37,5 +43,11 @@ public class MotionEventActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        setResult(200);
     }
 }
