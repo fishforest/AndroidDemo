@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.example.androiddemo.R;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class MyFragment extends Fragment {
@@ -34,6 +36,10 @@ public class MyFragment extends Fragment {
         if (TextUtils.isEmpty(desc))
             desc = "静态fragment";
         textView.setText(desc);
+        textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        textView.setOnClickListener((v)->{
+            int a = 5;
+        });
         return textView;
     }
 
@@ -100,5 +106,18 @@ public class MyFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
+    }
+
+
+    @Override
+    public void onViewStateRestored(Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+    }
+
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 }

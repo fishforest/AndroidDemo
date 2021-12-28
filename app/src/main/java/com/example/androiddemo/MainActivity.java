@@ -20,6 +20,7 @@ import com.example.androiddemo.ipc.IPCActivity;
 import com.example.androiddemo.motionevent.MotionEventActivity;
 import com.example.androiddemo.ssl.SSLTestActivity;
 import com.example.androiddemo.storagepermission.StorageActivity;
+import com.example.androiddemo.webview.WebviewActivity;
 import com.example.androiddemo.window.WindowActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -76,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
         });
         findViewById(R.id.btn_test_ssl).setOnClickListener((v) -> {
             SSLTestActivity.start(v.getContext());
+        });
+
+        findViewById(R.id.btn_test_webview).setOnClickListener((v) -> {
+            WebviewActivity.start(v.getContext());
         });
     }
 }

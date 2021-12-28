@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidDemo.iml" filepath="$PROJECT_DIR$/AndroidDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidDemo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ipcserver/AndroidDemo.ipcserver.iml" filepath="$PROJECT_DIR$/.idea/modules/ipcserver/AndroidDemo.ipcserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sslclient/AndroidDemo.sslclient.iml" filepath="$PROJECT_DIR$/.idea/modules/sslclient/AndroidDemo.sslclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sslserver/AndroidDemo.sslserver.iml" filepath="$PROJECT_DIR$/.idea/modules/sslserver/AndroidDemo.sslserver.iml" />
+    </modules>
+  </component>
+</project>

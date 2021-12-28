@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Android调用 JS 代码demo</title>
+    // JS代码似懂非懂
+    <script>
+       // Android需要调用的方法
+       function callJS(){
+          alert("Android调用了JS的callJS方法")
+       }
+
+       function callFuck(){
+            /*约定的url协议为：js://webview?arg1=111&arg2=222*/
+            document.location = "js://webview?arg1=111&arg2=222";
+       }
+    </script>
+</head>
+
+<body>
+<h1>这世界不好看</h1>
+<button type="button" onclick="callFuck()">点击fuck</button>
+</body>
+</html>
