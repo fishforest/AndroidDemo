@@ -1,8 +1,10 @@
 package com.example.androiddemo.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.androiddemo.R;
 import com.example.androiddemo.motionevent.MotionEventActivity;
@@ -10,6 +12,7 @@ import com.example.androiddemo.motionevent.MotionEventActivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Lifecycle;
 
 public class StaticFragmentActivity extends AppCompatActivity {
     public static void start(Context context) {

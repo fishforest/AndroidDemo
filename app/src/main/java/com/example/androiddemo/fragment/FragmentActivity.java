@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.androiddemo.R;
@@ -36,16 +37,21 @@ public class FragmentActivity extends AppCompatActivity {
         frameLayout = findViewById(R.id.container);
 
         findViewById(R.id.btn_switch1).setOnClickListener((v)->{
-//            replaceFragment(new MyFragment("fragment1"));
+            replaceFragment(new MyFragment("fragment1"));
 //            list.get(0)
-            hide(list.get(0));
+//            hide(list.get(0));
+//            detach(list.get(0));
+//            addFragment(new MyFragment("fragment2"));
         });
         findViewById(R.id.btn_switch2).setOnClickListener((v)->{
-//            addFragment(new MyFragment("fragment2"));
-            show(list.get(0));
+//            replaceFragment(new MyFragment("fragment2"));
+//            show(list.get(0));
+//            remove(list.get(0));
+            replaceFragment(new MyFragment("fragment2"));
         });
 
         addFragment(new MyFragment("fragment1"));
+//        addFragment(new MyFragment("fragment2"));
 //        addFragment(new MyFragment("fragment2"));
 //        replaceFragment(new MyFragment("fragment1"));
     }
@@ -64,6 +70,19 @@ public class FragmentActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    private void remove(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();   // 开启一个事务
+        transaction.remove(fragment);
+        transaction.commit();
+    }
+
+    private void detach(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();   // 开启一个事务
+        transaction.detach(fragment);
+    }
+
     private void show(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();   // 开启一个事务
@@ -74,9 +93,12 @@ public class FragmentActivity extends AppCompatActivity {
 
     private void addFragment(Fragment fragment) {
         list.add(fragment);
+        //获取Fragment管理对象
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();   // 开启一个事务
+        //添加fragment
         transaction.add(R.id.container, fragment);
+        //提交动作
         transaction.commit();
     }
 

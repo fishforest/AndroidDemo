@@ -37,9 +37,6 @@ public class MyFragment extends Fragment {
             desc = "静态fragment";
         textView.setText(desc);
         textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        textView.setOnClickListener((v)->{
-            int a = 5;
-        });
         return textView;
     }
 
@@ -108,13 +105,10 @@ public class MyFragment extends Fragment {
         super.setUserVisibleHint(isVisibleToUser);
     }
 
-
     @Override
     public void onViewStateRestored(Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
     }
-
-
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
